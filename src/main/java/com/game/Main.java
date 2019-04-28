@@ -16,7 +16,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         ConsoleReader console = new ConsoleReader();
-        BattleField battleField = new BattleField(20);
+        BattleField battleField = new BattleField(20, 20);
         Hero hero = new Hero(5, battleField);
 
         hideCursor(console);
