@@ -12,15 +12,17 @@ public class BattleField {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size2; j++) {
                 battleField[i][j] = ' ';
+
             }
+            System.out.println();
         }
         return battleField;
     }
 
     public int moveToPosition(int oldPosition, int newPosition, char symbol) {
         if (newPosition >= 0 && newPosition < battleField.length) {
-            battleField[oldPosition] [oldPosition] = ' ';
-            battleField[newPosition] [newPosition] = symbol;
+            battleField[19] [oldPosition] = ' ';
+            battleField[19] [newPosition] = symbol;
             return newPosition;
         } else {
             return oldPosition;
