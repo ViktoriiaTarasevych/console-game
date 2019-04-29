@@ -1,20 +1,32 @@
 package com.game;
 
 public class Hero {
-    private int positionX;
+    private Position position;
     private BattleField battleField;
 
-    public Hero(int positionX, BattleField battleField) {
-        this.positionX = positionX;
+    public Hero(Position position, BattleField battleField) {
+        this.position = position;
         this.battleField = battleField;
         moveRight();
     }
 
     public void moveRight() {
-        positionX = battleField.moveToPosition(positionX, positionX + 1, 'X');
+        Position newPosition = new Position(position.getX() + 1, position.getY());
+        position = battleField.moveToPosition(newPosition, position, 'X');
     }
 
     public void moveLeft() {
-        positionX = battleField.moveToPosition(positionX, positionX - 1, 'X');
+        Position newPosition = new Position(position.getX() - 1, position.getY());
+        position = battleField.moveToPosition(newPosition, position, 'X');
+    }
+
+    public void moveUp() {
+        Position newPosition = new Position(position.getX(), position.getY() - 1);
+        position = battleField.moveToPosition(newPosition, position, 'X');
+    }
+
+    public void moveDown() {
+        Position newPosition = new Position(position.getX(), position.getY() + 1);
+        position = battleField.moveToPosition(newPosition, position, 'X');
     }
 }

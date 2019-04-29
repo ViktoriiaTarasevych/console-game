@@ -17,7 +17,7 @@ public class Main {
 
         ConsoleReader console = new ConsoleReader();
         BattleField battleField = new BattleField(20, 20);
-        Hero hero = new Hero(5, battleField);
+        Hero hero = new Hero(new Position(5,8), battleField);
 
         hideCursor(console);
         clearConsole(console);
@@ -40,11 +40,11 @@ public class Main {
 
             } else if (action == Action.Up) {
 
-                //...
+                hero.moveUp();
 
             } else if (action == Action.Down) {
 
-                //...
+                hero.moveDown();
             }
 
             printBattleField(console, battleField);

@@ -1,28 +1,31 @@
 package com.game;
 
 public class BattleField {
+    private final int width;
+    private final int height;
     private char[][] battleField;
 
-    public BattleField(int size, int size2) {
-        this.battleField = createBattleField(size, size2);
+    public BattleField(int width, int height) {
+        this.battleField = createBattleField(width, height);
+        this.height = height;
+        this.width = width;
     }
 
-    private char[][] createBattleField(int size, int size2) {
-        char[][] battleField = new char[size][size2];
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size2; j++) {
+    private char[][] createBattleField(int width, int height) {
+        char[][] battleField = new char[height][width];
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
                 battleField[i][j] = ' ';
-
             }
-            System.out.println();
         }
         return battleField;
     }
 
-    public int moveToPosition(int oldPosition, int newPosition, char symbol) {
-        if (newPosition >= 0 && newPosition < battleField.length) {
-            battleField[19] [oldPosition] = ' ';
-            battleField[19] [newPosition] = symbol;
+    public Position moveToPosition(Position newPosition, Position oldPosition, char symbol) {
+        if (newPosition.getX() >= 0 && newPosition.getX() < this.width
+                && newPosition.getY() >= 0 && newPosition.getY() < this.height) {
+            battleField[oldPosition.getY()][oldPosition.getX()] = ' ';
+            battleField[newPosition.getY()][newPosition.getX()] = symbol;
             return newPosition;
         } else {
             return oldPosition;
@@ -31,13 +34,25 @@ public class BattleField {
 
     @Override
     public String toString() {
-        String str = "[";
+        String str = "";
+        for (int i = 0; i < this.width; i++) {
+            str = str + "-";
+        }
+        str += "\n";
 
-        for (int i = 0; i < battleField.length; i++) {
-            for (int j = 0; j < battleField.length; j++) {
+        for (int i = 0; i < this.height; i++) {
+            if (i == 0) {
+                str = "|" + str;
+            }
+            for (int j = 0; j < this.width; j++) {
                 str = str + battleField[i][j];
             }
+            str += "|\n";
         }
-        return str + "]";
+        for (int i = 0; i < this.width; i++) {
+            str = str + "-";
+        }
+        str += "\n";
+        return str;
     }
 }
