@@ -18,6 +18,8 @@ public class Main {
         ConsoleReader console = new ConsoleReader();
         BattleField battleField = new BattleField(20, 20);
         Hero hero = new Hero(new Position(5,8), battleField);
+        Monster monster1 = new Monster( new Position(10,15), battleField);
+        Monster monster2 = new Monster(new Position(18,13), battleField);
 
         hideCursor(console);
         clearConsole(console);
@@ -33,18 +35,26 @@ public class Main {
             if (action == Action.Right) {
 
                 hero.moveRight();
+                monster1.moveRandom();
+                monster2.moveRandom();
 
             } else if (action == Action.Left) {
 
                 hero.moveLeft();
+                monster1.moveRandom();
+                monster2.moveRandom();
 
             } else if (action == Action.Up) {
 
                 hero.moveUp();
+                monster1.moveRandom();
+                monster2.moveRandom();
 
             } else if (action == Action.Down) {
 
                 hero.moveDown();
+                monster1.moveRandom();
+                monster2.moveRandom();
             }
 
             printBattleField(console, battleField);
