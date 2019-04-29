@@ -41,10 +41,10 @@ public class BattleField {
         str += "\n";
 
         for (int i = 0; i < this.height; i++) {
-            if (i == 0) {
-                str = "|" + str;
-            }
+
             for (int j = 0; j < this.width; j++) {
+                if (j==0)
+                    str += "|";
                 str = str + battleField[i][j];
             }
             str += "|\n";
