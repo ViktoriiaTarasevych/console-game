@@ -35,7 +35,7 @@ public class BattleField {
     @Override
     public String toString() {
         String str = "";
-        for (int i = 0; i < this.width; i++) {
+        for (int i = 0; i <= this.width + 1; i++) {
             str = str + "-";
         }
         str += "\n";
@@ -43,13 +43,13 @@ public class BattleField {
         for (int i = 0; i < this.height; i++) {
 
             for (int j = 0; j < this.width; j++) {
-                if (j==0)
+                if (j == 0)
                     str += "|";
                 str = str + battleField[i][j];
             }
             str += "|\n";
         }
-        for (int i = 0; i < this.width; i++) {
+        for (int i = 0; i <= this.width + 1; i++) {
             str = str + "-";
         }
         str += "\n";

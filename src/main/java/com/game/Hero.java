@@ -4,10 +4,15 @@ public class Hero {
     private Position position;
     private BattleField battleField;
 
+
     public Hero(Position position, BattleField battleField) {
         this.position = position;
         this.battleField = battleField;
         moveRight();
+    }
+
+    public Position getPosition() {
+        return position;
     }
 
     public void moveRight() {

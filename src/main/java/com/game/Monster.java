@@ -11,6 +11,11 @@ public class Monster {
         this.position = position;
         this.battleField = battleField;
         this.random = new Random();
+        moveRight();
+    }
+
+    public Position getPosition() {
+        return position;
     }
 
     public void moveRandom() {
