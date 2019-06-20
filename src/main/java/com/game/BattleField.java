@@ -19,6 +19,7 @@ public class BattleField {
                 battleField[i][j] = ' ';
             }
         }
+        int b = 2;
         return battleField;
     }
 
