@@ -12,6 +12,7 @@ public class BattleField {
     }
 
     private char[][] createBattleField(int width, int height) {
+        int a = 3;
         char[][] battleField = new char[height][width];
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
