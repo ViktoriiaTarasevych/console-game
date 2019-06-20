@@ -73,6 +73,9 @@ public class Main {
                 break;
             }
         }
+
+        System.out.println("Vika game");
+        int a;
     }
 
     private static boolean проверитьЧтоИграЗавершена(Hero hero, Monster monster) {
@@ -108,4 +111,6 @@ public class Main {
         console.print(battleField.toString());
         console.flush();
     }
+
+
 }
