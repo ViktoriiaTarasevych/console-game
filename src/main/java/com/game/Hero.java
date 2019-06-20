@@ -10,6 +10,8 @@ public class Hero {
         moveRight();
     }
 
+    int a = 3;
+
     public void moveRight() {
         Position newPosition = new Position(position.getX() + 1, position.getY());
         position = battleField.moveToPosition(newPosition, position, 'X');
