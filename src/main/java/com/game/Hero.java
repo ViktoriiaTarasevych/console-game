@@ -26,6 +26,7 @@ public class Hero {
         Position newPosition = new Position(position.getX(), position.getY() - 1);
         position = battleField.moveToPosition(newPosition, position, 'X');
     }
+    int vb = 5;
 
     public void moveDown() {
         Position newPosition = new Position(position.getX(), position.getY() + 1);
